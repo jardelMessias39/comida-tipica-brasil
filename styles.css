@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
 }
+* {
+  box-sizing: border-box;
+}
 body {
     font-family: 'Barlow', sans-serif;
     line-height: 1.6;
@@ -11,8 +14,9 @@ body {
     background-color: #f4f4f4;
 }
 header {
-    background: #35424a;
-    color: #ffffff;
+    background: #f7f7fa; /* cor suave, pode trocar por outro tom pastel */
+    white-space: nowrap;
+    background-color: #35424a;
     padding: 0px 0;
     text-align: center;
   
@@ -23,16 +27,6 @@ h1:first-letter {
     font-weight: bold;
     
 }
-.mural-das-comidas-tipicas{
-    display: auto;
-    flex-direction: relative;
-    align-items: center;
-    padding: 10px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    position: center;
-}
 
 .conteudo-principal {
     display: flex;
@@ -42,140 +36,40 @@ h1:first-letter {
     gap: 48px; /* Espaço entre as colunas */
     margin: 32px;
 }
-.comidas-lista {
-    flex: 2;
+.conteudo-principal h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #35424a;
+    margin-bottom: 16px;
+    text-align: center;
 }
 .mural-das-comidas-tipicas {
     flex: 1;
-    padding: 40px;
-    background-color: #fffbe7;
-    min-width: 320px;
-    max-width: 500px;
+   padding: 30px 10px 80px 60px;
+    box-shadow:10px 0 20px 8px rgba(0,0,0,0.2);
+    position: relative;
+    max-width: 950px;
+    height: 250px; /* altura fixa para o mural */
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    margin-top: 0px;
+    margin-top: 50px;
+    background-color: #c7c0b9; /* cor suave, pode trocar por outro tom pastel */
 }
 .comentario{
-    background-color: #f1f1e8;
     resize: both;
-    padding: 30px 130px 20px 100px;
+    padding: 30px 20px 20px 100px;
     border-radius: 8px;
-    box-shadow: 0 20px 8px rgba(0,0,0,0.1);
-    margin-top: 100px;
-    position: relative
+    box-shadow:10px 0 20px 8px rgba(0,0,0,0.2);
+    margin-top: 50px;
+    position: relative;
+   background-color: #c7c0b9; /* cor suave, pode trocar por outro tom pastel */
 }
-button {
-    background-color: #35424a;
-    color: #ffffff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-button:hover {
-    background-color: #5b5e60;
-    transition: background-color 0.3s ease;
-}
-button:active {
-    background-color: #ccc; /* Cor de fundo quando desabilitado */
-    cursor: not-allowed; /* Cursor de não permitido */
-    transform: scale(0.9); /* Efeito de escala ao desabilitar */
-}
-.Descrição {
-    font-weight: bold;
-    margin-top: 10px;
-    font-size: 1.2em;
-    padding: 10px;
-    border-radius: 5px;
-    color: #333;
-}
-footer {
-    background: #5b5e60;
-    color: #ffffff;
-    padding: 20px 0 10px 0;
-    position: static;
-    text-align: center;
-    font-family: 'Barlow', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-footer p {
-    margin: 6px 0;
-    font-size: 1.1em;
-    color: #ffffff;
-    text-align: center;
-    font-weight: 500;
-    line-height: 1.5;
-}
-footer a {
-    color: #423a3c;
-    text-decoration: none;
-    font-weight: 600;
-    margin: 0 4px;
-}
-footer a:hover {
-    text-decoration: underline;
-}
-@media screen and (max-width: 600px) {
-    h1:first-letter {
-        font-size: 2em;
-    }
-}
-
-
-nav {
-    margin-top: 10px;
-    background: #f7f7fa; /* cor suave, pode trocar por outro tom pastel */
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    padding: 8px 0 8px 0;
-}
-
-/* Menu de navegação em linha */
-.nav-lista {
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.5em;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-     box-decoration-break: clone;
-     -ms-zoom-animation: 3s;
-}
-
-.nav-lista a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 400px;
+.conteudo-principal h2 {
     font-size: 2.0em;
-   transition: color 0.3s;
-   
-}
-nav a {
-    color: #ffffff;
-    text-decoration: solid;
-    margin: 0 45px;
     font-weight: bold;
-    width: 50px;
+    color: #35424a;
+    margin-bottom: 16px;
+    text-align: center;
 }
-.nav-lista a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 100%;
-    height: 2px;
-    background: #35424a;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-    border-radius: 2px;
-}
-
 
 /* Imagens e descrições das comidas típicas */
 .comidas-lista {
@@ -219,38 +113,31 @@ nav a {
 .area-interativa {
     display: flex;
     flex-direction: row;
-    gap: 5%; /* Espaço entre as colunas */;
+    gap: 20px; /* Espaço entre as colunas */
     align-items: flex-start;
     justify-content: left;
-    margin-top: 20px;
+    margin-top: 60px;
     margin-bottom: 60px;
+    padding: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
 }
 .area-comentario {
     flex: 1;
     /* Ajuste de largura para permitir redimensionamento */;
-    min-width: 500px;
-    max-width: 100%;
+    min-width: 100px;
+    max-width: 400px;
     margin-top:20px;
-    padding: 50% 20px;
+    padding: 50px 10px 10px 50px;
     position: relative;
     border-radius: 8px;
-    background-color: #f1f1e8;
-    box-shadow: 2px 4px 16px rgba(0,0,0,0.5);
-}
-.mural-das-comidas-tipicas {
-    flex: 1;
-    min-width: 500px;
-    max-width: 50%;
-    margin-top: 100px;
-    position: static;
-    padding: 20px;
-    background-color: #f1f1e8;
-    border-radius: 8px;
-    box-shadow: 2px 4px 16px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: auto;
+    resize: both;
 }
 
 .logo {
-    background-color: #35424a;
+    
     font-family: 'Barlow', sans-serif;
     font-size: 2.8em;
     font-weight: 900;
@@ -259,6 +146,7 @@ nav a {
     text-shadow: 1px 1px 8px #e0e0e0;
     margin: 32px 0 8px 0;
     text-align: center;
+     animation: mover-e-mudar 3s infinite;
 }
 .logo::before {
     content: '😋';
@@ -268,107 +156,315 @@ nav a {
     margin-top: 10px;
 }
 
+
+@keyframes mover-e-mudar {
+  0% {
+    transform: translateX(0);
+    
+  }
+  50% {
+    transform: translateX(200px);
+    
+  }
+  100% {
+    transform: translateX(0);
+   
+  }
+}
+
+
 .comidas-lista {
     flex: right;
 }
 .slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 600px;
-    min-width: 350px;
-    margin: 2% auto;
-    cursor: pointer;
-    
+  display: flex; /* corrigido aqui */
+  flex-direction: column;
+  align-items: center;
+  margin: 3% auto;
+  cursor: pointer;
+  opacity: 1;
 }
 .slider {
-    width: 100%;
-
-    height: 600px;
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100px; /* ou até menos, tipo 90% */
+  max-width: 300px; /* limita em telas grandes */
+  height: 250px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
 }
+
 .slider li {
-    list-style: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s;
-    z-index: 1;
+  display: none; /* escondidos por padrão */
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.5s ease;
 }
-.slider li.active {
-    opacity: 1;
-    z-index: 2;
-    width: 100%;
-    height: 520px; /* aumente conforme desejar, ex: 500-600px */
-    max-width: 900px; /* opcional, para limitar em telas grandes */
-    margin: 0 auto;
 
+.slider li.active {
+  display: block; /* só o ativo aparece */
+  opacity: 1;
+  z-index: 10;
 }
+/* Estilo para as imagens dentro do slider */
  .slider img {
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     border-radius: 8px;
     display: block;
+   align-items: center;
     margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    transform: scale(1);
+    margin-top: 200px;
 }
 .area-slider {
-    width: 100%;
+  width: 10%;
+  height: 500px;
+  width: 600px;
+height: 30px; /* ou um valor proporcional ao slide */
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  text-align: center;
+ 
+
+}
+.slider p {
+    margin: 12px 0;
+    font-size: 1.2em;
+    color: #333;
     text-align: center;
-    margin-bottom: 10px;
-    position: relative;
+}
+.slider img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 .acesso-usuario {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 1.1em;
-    font-family: 'Barlow', sans-serif;
-    color: #35424a;
-    z-index: 2px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
+  position: fixed;
+  top: 20px;
+  right: 10px;
+  white-space: nowrap;
+  font-size: 1.1em;
+  font-family: 'Barlow', sans-serif;
+  color: #cfdde5;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
 }
+
 .acesso-usuario a {
     color: #35424a;
     text-decoration: none;
     font-size: 1em;
-    font-weight: 500;
-    margin-left: 0;
-    white-space: nowrap;
+    font-weight: 200;
+    transition: color 0.3s ease;
+    
 }
-.acesso-usuario a:hover {
+
+button {
+    background-color: #35424a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+button:hover {
+    background-color: #5b5e60;
+    transition: background-color 0.3s ease;
+}
+button:active {
+    background-color: #ccc; /* Cor de fundo quando desabilitado */
+    cursor: not-allowed; /* Cursor de não permitido */
+    transform: scale(0.9); /* Efeito de escala ao desabilitar */
+}
+.Descrição {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1.2em;
+    padding: 20px;
+    border-radius: 10px;
+    color: #333;
+}
+footer {
+    background: #5b5e60;
+    color: #ffffff;
+    padding: 20px 0 10px 0;
+    position: static;
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+footer p {
+    margin: 6px 0;
+    font-size: 1.1em;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.5;
+}
+footer a {
+    color: #423a3c;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 4px;
+}
+footer a:hover {
     text-decoration: underline;
 }
-@media screen and (max-width: 1200px) {
+nav {
+    margin-top: 10px;
+    background: #f7f7fa; /* cor suave, pode trocar por outro tom pastel */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 8px 0 8px 0;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: solid;
+    margin: 0 45px;
+    font-weight: bold;
+    width: 50px;
+}
+.nav-lista {
+
+    display: flex;
+    White-space: nowrap;
+    justify-content: center;
+    gap: 0.3em;
+    list-style: none;
+    padding: 10px 40px 10px 0;
+    margin: 0;
+    position: relative;
+    font-family: 'Barlow', sans-serif;
+     -ms-zoom-animation: 3s;
+}
+/* Menu de navegação em linha */
+.nav-lista a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400px;
+    font-size: 2.0em;
+   transition: color 0.3s;
+   
+}
+.nav-lista a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: #35424a;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    border-radius: 2px;
+}
+@media screen and (max-width: 600px) {
+    h1:first-letter {
+        font-size: 2em;
+    }
+    .acesso-usuario {
+    flex-direction: column;
+    gap: 10vw;
+    align-items: flex-end;
+  }
+    .nav-lista a {
+        font-size: 1.5em;
+        margin: 0 20rem;
+    }
+    .nav-lista a::after {
+        height: 1vw;
+    }
+    .nav-lista {
+        flex-direction: column;
+        align-items: center;
+        left: 0;
+        gap: 0.5em;
+        white-space: nowrap;
+    }
+    .conteudo-principal {
+        flex-direction: column;
+        gap: 24vw;
+        margin: 16vh;
+        align-items: center;
+    }
+    .mural-das-comidas-tipicas, .area-comentario {
+        min-width: 320px;
+        padding: 20%;
+    }
+    .slider {
+        display: block;
+        height: 500px;
+        animation: infinite;
+    }
+    .logo {
+        font-size: 1.5em;
+        margin: 16px 0 4px 0;
+        text-align: center;
+    }
+    @keyframes slide {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+    }
+
+}
+
+@media screen and (max-width: 130px) {
     .conteudo-principal {
         gap: 24px;
         margin: 16px;
+        white-space: normal;
+        flex-direction: column;
+        align-items: right;
+       
+    }
+    .logo {
+        font-size: 1.5em;
+        margin: 16px 0 4px 0;
+        text-align: center;
+    }
+    .nav-lista {
+        flex-direction: column;
+        align-items: center;
+        left: 30px;
+        gap: 0.5em;
+        white-space: normal;
     }
     .mural-das-comidas-tipicas, .area-comentario {
         min-width: 320px;
         padding: 20px;
     }
     .slider {
+        display: block;
         height: 500px;
         animation: infinite;
         
     }
     .acesso-usuario{
-        
+        font-size: medium;
         padding: auto;
-        
+        position: right;
+        align-items:right;
+        justify-content: center;
+         white-space: normal;
+        flex-direction: column;
+       gap: 10px;
+       align-items: flex-end;
+
     }
     @media screen and (max-width: 1040px) {
     .acesso-usuario {
@@ -379,6 +475,15 @@ nav a {
         margin-bottom: 8px;
         right: auto;
         top: auto;
+        white-space: nowrap;
+        flex-direction: column;
+        gap: 10px;
+     align-items: flex-end
+    }
+    .logo {
+        font-size: 1.5em;
+        margin: 16px 0 4px 0;
+        text-align: center;
     }
 }
 }
@@ -397,6 +502,7 @@ nav a {
     .slider {
         height: 320px;
         max-width: 100%;
+         white-space: nowrap;
     }
     .img-comida {
         width: 100%;
@@ -414,6 +520,7 @@ nav a {
         top: 2px;
         gap: 6px;
         position: relative;
+         white-space: nowrap;
     }
 }
 @media screen and (max-width: 700px) {
@@ -431,6 +538,7 @@ nav a {
         top: 2px;
         gap: 6px;
         position: relative;
+         white-space: nowrap;
     }
     .nav-lista {
         gap: 0.7em;
@@ -440,6 +548,7 @@ nav a {
     }
     .slider {
         height: 160px;
+         white-space: nowrap;
     }
     .mural-das-comidas-tipicas, .area-comentario {
         padding: 10px;
@@ -468,10 +577,12 @@ nav a {
         top: 2px;
         gap: 4px;
         position: relative;
+         white-space: nowrap;
     }
     .nav-lista {
         flex-direction: column;
         gap: 0.3em;
+         white-space: nowrap;
     }
     .slide, .slider {
         height: 90px;
@@ -483,10 +594,14 @@ nav a {
         padding: 4px;
         font-size: 0.92em;
         min-width: 0;
+         white-space: nowrap;
+        
     }
     .comentario {
         padding: 8px 2px 8px 2px;
         margin-top: 10px;
+         white-space: nowrap;
+         font-size: 0.92em;
     }
     footer {
         font-size: 0.85em;
