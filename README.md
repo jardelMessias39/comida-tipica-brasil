@@ -2,7 +2,4 @@
 <br>
 <br>
 <p><h2>Este projeto eu fiz para colocar em prática o meu conhecimento</h2></p>
-<style>
-
-  background : #fff37A;
-</style>
+<img src ="https://github.com/jardelMessias39/comida-tipica-brasil/blob/main/tipicas/imagem%20disktop.png?raw=true"/>
