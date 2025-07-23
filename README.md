@@ -2,7 +2,25 @@
 <br>
 <br>
 <p><h2>Este projeto eu fiz para colocar em prática o meu conhecimento</h2></p>
-<style>
+<br>
+<h2>Tecnologias utilizadas</h2>🚀
+<div align="left">
+  <img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white"/ />
+    <img src ="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+      <img src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white"/ /> </div>
+    
+   <div> 
+    <h2>Meu Contato</h2>
+    <img src= "https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo"></div>
+ <h2>Rede Sociais</h2>
+ <div align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" height="40" alt="facebook logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" height="40" alt="google logo"  />
+</div>
+    <br>
 
-  background : #fff37A;
-</style>
+<img src ="https://github.com/jardelMessias39/comida-tipica-brasil/blob/main/tipicas/imagem%20disktop.png?raw=true"/>
+<br>
+<br>
+<img src ="https://github.com/jardelMessias39/comida-tipica-brasil/blob/main/tipicas/imagem%20mobile.png?raw=true"/>
