@@ -15,10 +15,14 @@
     
     <br>
     <h2>Meu Contato</h2>
-    
-    <div align="left">
-  <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo"  />
-  </div>
+    <a href="www.linkedin.com/in/jardel-messias-desenvolvedor">
+     <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo"  />
+ <h2>Rede Sociais</h2>
+ <div align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" height="40" alt="facebook logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" height="40" alt="google logo"  />
+</div>
     <br>
 
 <img src ="https://github.com/jardelMessias39/comida-tipica-brasil/blob/main/tipicas/imagem%20disktop.png?raw=true"/>
