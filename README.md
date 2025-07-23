@@ -4,18 +4,23 @@
 <p><h2>Este projeto eu fiz para colocar em prática o meu conhecimento</h2></p>
 <br>
 <h2>Tecnologias utilizadas</h2>🚀
+<div align="left">
+  <img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white"/ />
     <img src ="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
    
     <img src ="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white"/>
      
     <img src ="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white"/>
+    </div>
     
     <br>
-    <img src ="	https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white">
+    
     <br>
     <h2>Meu Contato</h2>
     
-    <img src ="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+    <div align="left">
+  <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo"  />
+  </div>
     <br>
 
 <img src ="https://github.com/jardelMessias39/comida-tipica-brasil/blob/main/tipicas/imagem%20disktop.png?raw=true"/>
