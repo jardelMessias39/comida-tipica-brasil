@@ -9,7 +9,7 @@
     <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> 
     <img src="	https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white" width="40" height="40" </a> 
       <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> 
-    <img src="	https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white"/a>
+    <img src="	https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white"></a>
     <br>
     <br>
     <h2>Meu Contato</h2>
