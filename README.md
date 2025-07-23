@@ -5,12 +5,15 @@
 <br>
 <h2>Tecnologias utilizadas</h2>🚀
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> 
-    <img src="icons/javascript.svg" alt="JavaScript" width="40" height="40" /> 
+    <img src="icons/javascript.svg" alt="JavaScript" width="40" height="40"< /a> 
     <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> 
-    <img src="icons/css3.svg" alt="CSS3" width="40" height="40" /> 
+    <img src="icons/css3.svg" alt="CSS3" width="40" height="40" </a> 
       <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> 
-    <img src="icons/html5.svg" alt="HTML5" width="40" height="40" /> 
+    <img src="icons/html5.svg" alt="HTML5" width="40" height="40" </a> 
     <br>
     <br>
 
 <img src ="https://github.com/jardelMessias39/comida-tipica-brasil/blob/main/tipicas/imagem%20disktop.png?raw=true"/>
+<br>
+background-color: blue;
+< img src= "https://github.com/jardelMessias39/comida-tipica-brasil/blob/main/tipicas/imagem%20mobile.png?raw=true"/>
