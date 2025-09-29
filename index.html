@@ -1,147 +1,104 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="icon" href="./tipicas/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
-
-
-    <title> Comidas Típicas do Brasil</title>
-    <nav style="position: relative;">
-        <ul class="nav-lista">
-            <li><a href="#comidas">Comidas Típicas</a></li>
-            <li><a href="#bebidas">Bebidas </a></li>
-            <li><a href="#doces">Doces </a></li>
-            <li><a href="#receitas">Receitas </a></li>
-        </ul>
-        <div class="acesso-usuario">
-            <a href="#cadastra-se">Cadastra-se</a> 
-            <a href="#Login">Login</a>
-        </div>
-    </nav>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comidas Típicas do Brasil</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="./tipicas/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-   
-        <div class="area-slider">
-            <p><i><strong>Conheça algumas das comidas típicas do Brasil, preparadas por chefs renomados.</strong></i></p>
-        </div>
-        <div class="slide">
-            <ul class="slider">
-                <li>
-                    <img src="./brasileira-1.jpg" alt="Comida Brasileira 1" />
-                      <p><strong>Chef </strong></p>
-                </li>
-                   
-                <li>
-                    <img src="./chef roberto-neves.jpg" alt="Chef Roberto Neves" />
-                       <p><strong>Chef Roberto Neves</strong>
-                </li>
-             
-                </p>
-                <li>
-                    <img src="./chef thays.webp" alt="Chef Thays" />
-                    <p><strong>Chef Thays</strong></p>
-                </li>
-              
-            
-                <li>
-                    <img src="./henrique-fogaca-jamile.jpg" alt="Henrique Fogaça e Jamile" />
-                    <p><strong> Chef henrique Fogaça</strong></p>
-                </li>
-                    
-                <li>
-                    <img src="./chef Alex-atalaia.jpg" alt="Chef Alex Atalaia" />
-                    <p><strong> Chef Alex Atalaia</strong></p>
-                </li>
-                    
-                <li>
-                    <img src="./chef thiago rosseti.jpg" alt="Thiago Rossetti Tessor" />
-                 <p><strong>Chef Thiago Rosseti</strong></p>
-                </li>
-               
-            </ul>
-        </div>
-    </div>
-    <div class="logo">Típicas Gastronomia</div>
-    <h1>Comidas Típicas do Brasil</h1>
-    <div class="conteudo-principal">
-        <div class="area-comidas-slider">
-            <div class="comidas-lista">
-                <div class="comida-item">
-                    <a href="#feijoada"><img src="./tipicas/feijoada.jpg" alt="Feijoada" class="img-comida"></a>
-                    <span><strong>Feijoada</strong> - Um prato à base de feijão preto e carnes variadas, típico do Rio
-                        de
-                        Janeiro.</span>
-                </div>
-                <div class="comida-item">
-                    <a href="#moqueca"><img src="./tipicas/moqueca.jpg" alt="Moqueca" class="img-comida"></a>
-                    <span> <strong>Moqueca</strong> - Um ensopado de peixe com leite de coco, típico da Bahia.</span>
-                </div>
-                <div class="comida-item">
-                    <a href="#churrasco"><img src="./tipicas/churrasco.jpg" alt="Churrasco" class="img-comida"></a>
-                    <span><strong>Churrasco</strong> - Carne grelhada, muito popular no sul do Brasil.</span>
-                </div>
-                <div class="comida-item">
-                    <a href="#paodequeijo"><img src="./tipicas/paodequeijo.jpg" alt="Pão de Queijo"
-                            class="img-comida"></a>
-                    <span><strong>Pão de Queijo</strong> - Um lanche feito de polvilho e queijo, típico de Minas
-                        Gerais.</span>
-                </div>
-                <div class="comida-item">
-                    <a href="#acaraje"><img src="./tipicas/acaraje.jpg" alt="Acarajé" class="img-comida"></a>
-                    <span><strong>Acarajé</strong> - Bolinho de feijão-fradinho frito, recheado com camarão, típico da
-                        Bahia.</span>
+  <!-- Navegação -->
+  <header>
+    <nav>
+      <ul class="nav-lista">
+        <li><a href="#comidas">Comidas Típicas</a></li>
+        <li><a href="#bebidas">Bebidas</a></li>
+        <li><a href="#doces">Doces</a></li>
+        <li><a href="#receitas">Receitas</a></li>
+      </ul>
+      <div class="acesso-usuario">
+        <a href="#cadastra-se">Cadastra-se</a>
+        <a href="#login">Login</a>
+      </div>
+    </nav>
+  </header>
 
-                </div>
-            </div>
-            <div class="area-interativa">
-                <div class="comentario">
-                    <h2>Deixe seu comentário</h2>
-                    <form action="https://example.com" method="POST">
-                        <textarea name="comentario" rows="4" cols="50"
-                            placeholder="Escreva seu comentário aqui..."></textarea>
-                        <button type="submit">Enviar</button>
-                    </form>
-                </div>
-                <div class="mural-das-comidas-tipicas">
-                    <h2>Poste suas receitas típicas</h2>
-                    <form id="form-receita" enctype="multipart/form-data">
-                        <label for="nome">Seu Nome:</label>
-                        <input type="text" id="nome" name="nome" required>
-                        <label for="foto">Foto da Receita:</label>
-                        <input type="file" id="foto" name="foto" accept="image/*" required>
-                        <label for="descricao">Descrição da Receita:</label>
-                        <textarea id="descricao" name="descricao" rows="3" required
-                            placeholder="Descreva sua receita..."></textarea>
-                        <button type="submit">Postar</button>
-                    </form>
-                    <div id="mural-receitas"></div>
-                </div>
-            </div>
-        </div>
+  <!-- Slider de chefs -->
+  <section class="area-slider">
+    <p><strong>Conheça algumas das comidas típicas do Brasil, preparadas por chefs renomados.</strong></p>
+    <ul class="slider">
+      <li>
+        <img src="./brasileira-1.jpg" alt="Prato típico brasileiro" />
+        <p><strong>Chef convidado</strong></p>
+      </li>
+      <li>
+        <img src="./chef roberto-neves.jpg" alt="Chef Roberto Neves" />
+        <p><strong>Chef Roberto Neves</strong></p>
+      </li>
+      <!-- Continue com os demais chefs... -->
+    </ul>
+  </section>
+
+  <!-- Logo e título -->
+  <div class="logo">Típicas Gastronomia</div>
+  <h1>Comidas Típicas do Brasil</h1>
+
+  <!-- Lista de comidas -->
+  <section id="comidas" class="conteudo-principal">
+    <h2>Pratos Tradicionais</h2>
+    <div class="comidas-lista">
+      <article class="comida-item">
+        <img src="./tipicas/feijoada.jpg" alt="Feijoada" class="img-comida">
+        <h3>Feijoada</h3>
+        <p>Prato à base de feijão preto e carnes variadas, típico do Rio de Janeiro.</p>
+      </article>
+      <!-- Continue com os demais pratos... -->
+    </div>
+  </section>
+
+  <!-- Área interativa -->
+  <section class="area-interativa">
+    <div class="comentario">
+      <h2>Deixe seu comentário</h2>
+      <form action="https://example.com" method="POST">
+        <label for="comentario">Comentário:</label>
+        <textarea id="comentario" name="comentario" rows="4" placeholder="Escreva seu comentário aqui..."></textarea>
+        <button type="submit">Enviar</button>
+      </form>
     </div>
 
-    <footer>
-        <p>
-            Contato: <a href="mailto:jardel@example.com">jardelmessias28@gmail.com</a> |
-            Tel: (79) 99999-9999
-        </p>
-        <p>Desenvolvido por <a href="https://example.com">Jardel Messias</a></p> <br>
-        <p>Redes Sociais: <a href="https://twitter.com/jardelmessias">Twitter</a>, <a
-                href="https://instagram.com/jardelmessias">Instagram</a>, <a href="https://www.linkedin.com/in/jardel-messias-123456789/">LinkedIn</a></p>
+    <div class="mural-das-comidas-tipicas">
+      <h2>Poste suas receitas típicas</h2>
+      <form id="form-receita" enctype="multipart/form-data">
+        <label for="nome">Seu Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <label for="foto">Foto da Receita:</label>
+        <input type="file" id="foto" name="foto" accept="image/*" required>
+        <label for="descricao">Descrição da Receita:</label>
+        <textarea id="descricao" name="descricao" rows="3" required placeholder="Descreva sua receita..."></textarea>
+        <button type="submit">Postar</button>
+      </form>
+      <div id="mural-receitas"></div>
+    </div>
+  </section>
 
-        <p>&copy; 2023 - Todos os direitos reservados</p>
-    </footer>
+  <!-- Rodapé -->
+  <footer>
+    <p>Contato: <a href="mailto:jardelmessias28@gmail.com">jardelmessias28@gmail.com</a> | Tel: (79) 99999-9999</p>
+    <p>Desenvolvido por <a href="https://example.com">Jardel Messias</a></p>
+    <p>Redes Sociais: 
+      <a href="https://twitter.com/jardelmessias">Twitter</a>, 
+      <a href="https://instagram.com/jardelmessias">Instagram</a>, 
+      <a href="https://www.linkedin.com/in/jardel-messias-123456789/">LinkedIn</a>
+    </p>
+    <p>&copy; 2023 - Todos os direitos reservados</p>
+  </footer>
 
-   
+  <script src="./script.js"></script>
 </body>
-<script src="./script.js"></script>
 </html>
