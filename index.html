@@ -1,104 +1,185 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comidas Típicas do Brasil</title>
-  <link rel="stylesheet" href="./styles.css">
-  <link rel="icon" href="./tipicas/favicon.ico" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comidas Típicas do Brasil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
-  <!-- Navegação -->
-  <header>
-    <nav>
-      <ul class="nav-lista">
-        <li><a href="#comidas">Comidas Típicas</a></li>
-        <li><a href="#bebidas">Bebidas</a></li>
-        <li><a href="#doces">Doces</a></li>
-        <li><a href="#receitas">Receitas</a></li>
-      </ul>
-      <div class="acesso-usuario">
-        <a href="#cadastra-se">Cadastra-se</a>
-        <a href="#login">Login</a>
-      </div>
-    </nav>
-  </header>
+    <header>
+        </header>
 
-  <!-- Slider de chefs -->
-  <section class="area-slider">
-    <p><strong>Conheça algumas das comidas típicas do Brasil, preparadas por chefs renomados.</strong></p>
-    <ul class="slider">
-      <li>
-        <img src="./brasileira-1.jpg" alt="Prato típico brasileiro" />
-        <p><strong>Chef convidado</strong></p>
-      </li>
-      <li>
-        <img src="./chef roberto-neves.jpg" alt="Chef Roberto Neves" />
-        <p><strong>Chef Roberto Neves</strong></p>
-      </li>
-      <!-- Continue com os demais chefs... -->
-    </ul>
-  </section>
+    <section class="area-slider">
+        <p><strong>Conheça algumas das comidas típicas do Brasil, preparadas por chefs renomados.</strong></p>
 
-  <!-- Logo e título -->
-  <div class="logo">Típicas Gastronomia</div>
-  <h1>Comidas Típicas do Brasil</h1>
+        <div class="chefs-carrossel-container">
+            <button class="btn-carrossel" id="btn-chef-anterior">⬅️</button>
+            <ul class="slider chefs-lista" id="chefs-lista">
+                <li class="chef-item">
+                    <img src="./chefes/chef Roberto-neves.jpg" alt="Chef Roberto Neves" />
+                    <p><strong>Chef Roberto Neves</strong></p>
+                </li>
+                <li class="chef-item">
+                    <img src="./chefes/Serginho-jucá.jpg" alt="Chef Serginho Jucá" />
+                    <p><strong>Chef Serginho Jucá</strong></p>
+                </li>
+                <li class="chef-item">
+                    <img src="./chefes/rafael-liberio.webp" alt="Chef Rafael Liberio" />
+                    <p><strong>Chef Rafael Liberio</strong></p>
+                </li>
+                <li class="chef-item">
+                    <img src="./chefes/chef thiago rosseti.jpg" alt="Thiago Rosseti Tessor" />
+                    <p><strong>Chef Thiago Rosseti</strong></p>
+                </li>
+                <li class="chef-item">
+                    <img src="./chefes/chef Alex-atalaia.jpg" alt="Chef Alex Atalaia" />
+                    <p><strong>Chef Alex Atalaia</strong></p>
+                </li>
+                <li class="chef-item">
+                    <img src="./chefes/henrique-fogaca-jamile.jpg" alt="Henrique Fogaça e Jamile" />
+                    <p><strong>Chef Henrique Fogaça</strong></p>
+                </li>
+                <li class="chef-item">
+                    <img src="./chefes/chef thays.webp" alt="Chef Thays" />
+                    <p><strong>Chef Thays</strong></p>
+                </li>
+            </ul>
+            <button class="btn-carrossel" id="btn-chef-proximo">➡️</button>
+        </div>
+    </section>
 
-  <!-- Lista de comidas -->
-  <section id="comidas" class="conteudo-principal">
-    <h2>Pratos Tradicionais</h2>
-    <div class="comidas-lista">
-      <article class="comida-item">
-        <img src="./tipicas/feijoada.jpg" alt="Feijoada" class="img-comida">
-        <h3>Feijoada</h3>
-        <p>Prato à base de feijão preto e carnes variadas, típico do Rio de Janeiro.</p>
-      </article>
-      <!-- Continue com os demais pratos... -->
-    </div>
-  </section>
+    <div class="logo logo-destaque">Típicas Gastronomia</div>
+    <h1>Comidas Típicas do Brasil</h1>
 
-  <!-- Área interativa -->
-  <section class="area-interativa">
-    <div class="comentario">
-      <h2>Deixe seu comentário</h2>
-      <form action="https://example.com" method="POST">
-        <label for="comentario">Comentário:</label>
-        <textarea id="comentario" name="comentario" rows="4" placeholder="Escreva seu comentário aqui..."></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
+    <section id="comidas" class="conteudo-principal-receitas">
 
-    <div class="mural-das-comidas-tipicas">
-      <h2>Poste suas receitas típicas</h2>
-      <form id="form-receita" enctype="multipart/form-data">
-        <label for="nome">Seu Nome:</label>
-        <input type="text" id="nome" name="nome" required>
-        <label for="foto">Foto da Receita:</label>
-        <input type="file" id="foto" name="foto" accept="image/*" required>
-        <label for="descricao">Descrição da Receita:</label>
-        <textarea id="descricao" name="descricao" rows="3" required placeholder="Descreva sua receita..."></textarea>
-        <button type="submit">Postar</button>
-      </form>
-      <div id="mural-receitas"></div>
-    </div>
-  </section>
+        <div class="lista-e-navegacao">
+            <h2>Pratos Tradicionais</h2>
 
-  <!-- Rodapé -->
-  <footer>
-    <p>Contato: <a href="mailto:jardelmessias28@gmail.com">jardelmessias28@gmail.com</a> | Tel: (79) 99999-9999</p>
-    <p>Desenvolvido por <a href="https://example.com">Jardel Messias</a></p>
-    <p>Redes Sociais: 
-      <a href="https://twitter.com/jardelmessias">Twitter</a>, 
-      <a href="https://instagram.com/jardelmessias">Instagram</a>, 
-      <a href="https://www.linkedin.com/in/jardel-messias-123456789/">LinkedIn</a>
-    </p>
-    <p>&copy; 2023 - Todos os direitos reservados</p>
-  </footer>
+            <div class="comidas-lista grupo-pratos" id="grupo-pratos-1">
+                <article class="comida-item" data-receita-id="feijoada">
+                    <img src="./tipicas/feijoada.jpg" alt="Feijoada" class="img-comida">
+                    <div><h3>Feijoada</h3><p>Prato à base de feijão preto e carnes variadas...</p></div>
+                </article>
 
-  <script src="./script.js"></script>
+                <article class="comida-item" data-receita-id="moqueca">
+                    <img src="./tipicas/moqueca.jpg" alt="Moqueca" class="img-comida">
+                    <div><h3>Moqueca</h3><p>Prato à base de peixe cozido com leite de coco...</p></div>
+                </article>
+
+                <article class="comida-item" data-receita-id="churrasco">
+                    <img src="./tipicas/churrasco.jpg" alt="Churrasco" class="img-comida">
+                    <div><h3>Churrasco</h3><p>Prato à base de carne grelhada...</p></div>
+                </article>
+
+                <article class="comida-item" data-receita-id="paodequeijo">
+                    <img src="./tipicas/paodequeijo.jpg" alt="Pão de Queijo" class="img-comida">
+                    <div><h3>Pão de Queijo</h3><p>Bolinho de queijo feito com polvilho...</p></div>
+                </article>
+            </div>
+
+            <div class="comidas-lista grupo-pratos" id="grupo-pratos-2" style="display: none;">
+                <article class="comida-item" data-receita-id="acaraje">
+                    <img src="./tipicas/acaraje.jpg" alt="Acarajé" class="img-comida">
+                    <div><h3>Acarajé</h3><p>Bolinho de feijão-fradinho frito, típico da Bahia.</p></div>
+                </article>
+
+                <article class="comida-item" data-receita-id="carnedepanela">
+                    <img src="./tipicas/serginhojuca-carnedepanela.webp" alt="Carne de Panela" class="img-comida">
+                    <div><h3>Carne de Panela</h3><p>Carne cozida lentamente com temperos...</p></div>
+                </article>
+
+                <article class="comida-item" data-receita-id="caisdavitoria">
+                    <img src="./tipicas/caís-da-vitoria.jpg" alt="Caís da Vitória" class="img-comida">
+                    <div><h3>Caís da Vitória</h3><p>Prato à base de peixe, típico da Bahia.</p></div>
+                </article>
+
+                <article class="comida-item" data-receita-id="bobodecamarao">
+                    <img src="./tipicas/bobó-de-camarão.jpeg" alt="Bobó de Camarão" class="img-comida">
+                    <div><h3>Bobó de Camarão</h3><p>Prato à base de camarão e mandioca...</p></div>
+                </article>
+            </div>
+
+            <div class="navegacao-pratos">
+                <button id="btn-mostrar-mais-pratos">Próximos Pratos ➡️</button>
+            </div>
+        </div>
+
+        <div class="receita-detalhe-container">
+            <h2 id="receita-titulo-selecao">Clique em um prato para ver a receita!</h2>
+            </div>
+
+    </section>
+
+    <section class="area-interativa">
+
+        <div class="coluna-interativa-esquerda">
+
+            <h3>Publique sua Receita!</h3>
+            <div class="mural-das-comidas-tipicas">
+                <form id="form-postagem">
+                    <label for="nome-usuario">Seu Nome:</label>
+                    <input type="text" id="nome-usuario" required>
+
+                    <label for="titulo-receita">Título da Receita:</label>
+                    <input type="text" id="titulo-receita" required>
+
+                    <label for="descricao-receita">Descrição e Preparo (Resumido):</label>
+                    <textarea id="descricao-receita" rows="5" required></textarea>
+
+                    <div class="botoes-postagem">
+                       <input type="file" id="imagem-receita" name="imagem-receita-upload" accept="image/*">
+                        <button type="submit" id="btn-postar-receita">Postar Receita</button>
+                    </div>
+                </form>
+            </div>
+
+            <h3>Deixe seu Comentário!</h3>
+            <div class="mural-comentarios-container">
+                <form id="form-comentario">
+                    <label for="nome-comentario">Seu Nome:</label>
+                    <input type="text" id="nome-comentario" required>
+
+                    <label for="texto-comentario">Comentário:</label>
+                    <textarea id="texto-comentario" rows="4" required></textarea>
+
+                    <button type="submit">Enviar Comentário</button>
+                </form>
+            </div>
+
+            <h3>O que os outros dizem:</h3>
+            <div id="mural-comentarios">
+                <article class="comentario">
+                    <p><strong>Chef Visitante:</strong> Amei a proposta! O design ficou incrível, parabéns pela iniciativa. Vou postar minha receita de Mousse de Maracujá.</p>
+                </article>
+                <article class="comentario">
+                    <p><strong>Visitante 2:</strong> A moqueca baiana é minha favorita. Excelente site!</p>
+                </article>
+            </div>
+        </div>
+        
+        <div class="coluna-interativa-direita">
+            <h3>Receitas dos Usuários</h3>
+            <div id="mural-receitas-usuario" class="mural-receitas-usuario">
+                </div>
+
+            <div class="navegacao-usuario">
+                <button id="btn-anterior-usuario" style="display: none;">⬅️</button>
+                <button id="btn-proximo-usuario">➡️</button>
+            </div>
+        </div>
+        
+    </section>
+
+    <footer>
+        </footer>
+
+    <script src="./script.js"></script>
 </body>
+
 </html>
