@@ -15,11 +15,11 @@ const dadosReceitas = {
         ingredientes: "Postas de peixe (ou camarão), leite de coco (200ml), azeite de dendê (50ml), pimentões coloridos, coentro e cebola.",
         preparo: "Marine o peixe com sal e limão. Em uma panela de barro, faça camadas de temperos e peixe. Adicione o leite de coco e o dendê. Cozinhe por 20 minutos."
     },
-    churrasco: {
-        titulo: "Dicas para o Churrasco Gaúcho Perfeito",
-        imagem: "churrasco.jpg",
-        ingredientes: "Picanha, costela, maminha. Sal grosso e brasa forte.",
-        preparo: "Tempere a carne apenas com sal grosso. Leve à brasa, deixando a gordura para cima no início. Não vire mais de duas vezes."
+    almôndegas: {
+        titulo: "Receita de Almôndegas ao Molho de Tomate",
+        imagem: "almôndegas.jpeg",
+        ingredientes: "Carne moída (500g), cebola, alho, ovo, farinha de rosca, sal e pimenta, queijo parmesão ralado.",
+        preparo: "Misture a carne, o alho, 1 cebola bem picada, o pão triturado, o queijo, o orégano, sal e 2 colheres de sopa de salsa. Aqueça o óleo em uma frigideira e frite as almôndegas em fogo baixo até dourarem. Aqueça o azeite e refogue as cebolas restantes e os tomates picados."
     },
     paodequeijo: {
         titulo: "Pão de Queijo Mineiro Tradicional",
@@ -142,32 +142,7 @@ const CHAVE_RECEITAS = 'receitasUsuariosSalvas';
 // --- FUNÇÃO PARA SALVAR (Persistência) ---
 function salvarReceitas() {
     // Converte o array de objetos para uma string JSON e salva no navegador
-    formPostagem.addEventListener('submit', (e) => {
-    // ... (código de validação da receita) ...
-
-    if (arquivoImagem) {
-        // ... (código que lê a imagem) ...
-        reader.onload = function(e) {
-            // ... (cria a nova receita) ...
-
-            receitasUsuarios.unshift(novaReceita);
-            salvarReceitas(); // <--- CHAVE 1: SALVA AQUI
-            // ... (restante do código) ...
-        };
-        reader.readAsDataURL(arquivoImagem); 
-    } else {
-        // Se não houver imagem
-        // ... (cria a nova receita) ...
-        
-        receitasUsuarios.unshift(novaReceita);
-        salvarReceitas(); // <--- CHAVE 2: SALVA AQUI TAMBÉM
-        indexInicio = 0;
-        atualizarMuralUsuario();
-
-        formPostagem.reset();
-        alert('Sua receita foi postada com sucesso!');
-    }
-});
+    localStorage.setItem(CHAVE_RECEITAS, JSON.stringify(receitasUsuarios));
 }
 
 // --- FUNÇÃO PARA CARREGAR (Inicialização) ---
@@ -297,7 +272,6 @@ const inputTitulo = document.getElementById('titulo-receita');
 const textareaDescricao = document.getElementById('descricao-receita');
 const inputImagemReceita = document.getElementById('imagem-receita'); 
 
-// Função para salvar no Local Storage (se necessário)
 
 
 formPostagem.addEventListener('submit', (e) => {
