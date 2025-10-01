@@ -136,7 +136,50 @@ if (btnProximoChef && btnAnteriorChef && chefItems.length > 0) {
     });
 } 
 // Fim do Carrossel de Chefs
+// A CHAVE que usaremos no Local Storage
+const CHAVE_RECEITAS = 'receitasUsuariosSalvas';
 
+// --- FUNÇÃO PARA SALVAR (Persistência) ---
+function salvarReceitas() {
+    // Converte o array de objetos para uma string JSON e salva no navegador
+    formPostagem.addEventListener('submit', (e) => {
+    // ... (código de validação da receita) ...
+
+    if (arquivoImagem) {
+        // ... (código que lê a imagem) ...
+        reader.onload = function(e) {
+            // ... (cria a nova receita) ...
+
+            receitasUsuarios.unshift(novaReceita);
+            salvarReceitas(); // <--- CHAVE 1: SALVA AQUI
+            // ... (restante do código) ...
+        };
+        reader.readAsDataURL(arquivoImagem); 
+    } else {
+        // Se não houver imagem
+        // ... (cria a nova receita) ...
+        
+        receitasUsuarios.unshift(novaReceita);
+        salvarReceitas(); // <--- CHAVE 2: SALVA AQUI TAMBÉM
+        indexInicio = 0;
+        atualizarMuralUsuario();
+
+        formPostagem.reset();
+        alert('Sua receita foi postada com sucesso!');
+    }
+});
+}
+
+// --- FUNÇÃO PARA CARREGAR (Inicialização) ---
+function carregarReceitas() {
+    const receitasSalvas = localStorage.getItem(CHAVE_RECEITAS);
+    
+    if (receitasSalvas) {
+        // Se houver dados salvos, substitui o array inicial (de fallback)
+        receitasUsuarios = JSON.parse(receitasSalvas);
+    } 
+    // Se não houver dados salvos, o array 'receitasUsuarios' usará o array inicial (hardcoded)
+}
 
 // 2. FUNCIONALIDADE DOS PRATOS (MOSTRAR RECEITA COMPLETA)
 const pratosClicaveis = document.querySelectorAll('.comida-item');
@@ -256,8 +299,7 @@ const inputImagemReceita = document.getElementById('imagem-receita');
 
 // Função para salvar no Local Storage (se necessário)
 function salvarReceitas() {
-    // Você pode adicionar uma função aqui para salvar 'receitasUsuarios' no Local Storage
-    // localStorage.setItem('receitasUsuarios', JSON.stringify(receitasUsuarios));
+  
 }
 
 formPostagem.addEventListener('submit', (e) => {
@@ -339,6 +381,10 @@ formComentario.addEventListener('submit', (e) => {
 
     formComentario.reset();
 });
+// --- Inicialização e Chamada Final ---
+
+// 1. CARREGA AS RECEITAS DO LOCAL STORAGE ANTES DE MOSTRAR QUALQUER COISA
+carregarReceitas();
 
 
 // Inicializa o mural de receitas de usuários na primeira carga
