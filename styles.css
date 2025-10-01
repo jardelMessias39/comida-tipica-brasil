@@ -65,6 +65,58 @@ button {
 button:hover {
     background-color: var(--cor-secundaria);
 }
+/* --- RODAPÉ --- */
+footer {
+    background-color: #35424a; /* Cor escura para contraste */
+    color: white;
+    padding: 30px 0 15px 0;
+    font-size: 0.9em;
+}
+
+.container-rodape {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite quebrar em telas menores */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+.rodape-contato, .rodape-redes {
+    width: 48%; /* Ocupa quase metade do espaço em telas grandes */
+    margin-bottom: 20px;
+}
+
+.rodape-redes a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.rodape-redes a:hover {
+    color: var(--cor-destaque); /* Use a cor principal do seu site */
+}
+
+.direitos-reservados {
+    text-align: center;
+    font-size: 0.8em;
+    opacity: 0.8;
+}
+
+.rodape-contato a {
+    color: white; /* Garante que o link de localização seja visível */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.rodape-contato a:hover {
+    color: var(--cor-destaque); /* Usa a cor de destaque ao passar o mouse */
+    text-decoration: underline;
+}
 
 .logo {
     text-align: center;
@@ -72,6 +124,30 @@ button:hover {
     font-weight: 700;
     padding: 10px 0;
     color: var(--cor-secundaria);
+}
+/* --- QUEM SOMOS --- */
+.quem-somos {
+    background-color: #f7f7f7;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--cor-destaque);
+}
+
+.container-quem-somos {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.container-quem-somos h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.container-quem-somos p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #555;
 }
 
 
@@ -135,7 +211,35 @@ button:hover {
 #btn-chef-proximo {
    margin: 0 10px;
 }
+.chef-item .chef-descricao {
+    font-size: 0.85em; /* Um pouco menor */
+    line-height: 1.3;
+    min-height: 40px; /* Garante que todos os blocos tenham altura mínima para alinhamento */
+    display: flex; /* Alinha o texto da descrição, se quiser */
+    align-items: center; 
+    justify-content: center;
+    padding: 5px;
+}
 
+/* Adicione a transição para TODOS os elementos que se movem ou mudam */
+.chef-item, .comida-item {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+    cursor: pointer; /* Indica que é clicável */
+}
+
+/* Efeito ao passar o mouse */
+.chef-item:hover, .comida-item:hover {
+    transform: translateY(-5px); /* Move levemente para cima */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+.btn-carrossel, .btn-mostrar-mais-pratos, #btn-chef-anterior, #btn-chef-proximo {
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+/* Efeito ao ser pressionado */
+.btn-carrossel:active, .btn-mostrar-mais-pratos:active {
+    transform: scale(0.95); /* Diminui levemente */
+}
 .conteudo-principal-receitas {
     display: flex;
     max-width: 1200px;
@@ -380,7 +484,35 @@ button:hover {
 #btn-postar-receita:hover {
     background-color: #7b2e2e;
 }
+/* --- ESTILO PARA O MAPA --- */
+.mapa-container {
+    /* Garante que o iframe (mapa) se ajuste à largura da coluna */
+    margin-top: 15px; 
+    border-radius: 8px; /* Borda suave */
+    overflow: hidden; /* Recorta o iframe nas bordas arredondadas */
+}
 
+/* O iframe do mapa ajusta a largura automaticamente (width="100%" no HTML) */
+
+/* --- ESTILO PARA OS ÍCONES DE REDES SOCIAIS --- */
+.icones-redes a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 1.8em; /* Aumenta o tamanho do ícone */
+    transition: color 0.3s;
+}
+
+.icones-redes a:hover {
+    color: var(--cor-destaque); /* Usa a cor de destaque do seu site */
+}
+
+/* Oculta o link do WhatsApp para garantir que não pareça clicável se não houver destino real */
+.icones-redes a[title="WhatsApp de Contato"] {
+    cursor: default; /* Mostra o cursor padrão */
+}
+
+/* Ajuste para celular */
 
 
 @media screen and (max-width: 900px) {
@@ -450,4 +582,25 @@ button:hover {
  }
 
 
+.rodape-contato, .rodape-redes {
+        width: 100%;
+        text-align: center;
+    }
+    .icones-redes {
+        text-align: center;
+    }
+    
+    .icones-redes a {
+        margin: 0 10px;
+        color: white;
+        font-size: 1.5em;
+        transition: color 0.3s;
+    }
+
+    .icones-redes a:hover {
+        color: var(--cor-destaque);
+    }
+     .mapa-container {
+        padding: 0 10px;
+    }
 }

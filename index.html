@@ -10,11 +10,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:wght@300;400;700&display=swap"
         rel="stylesheet">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
     <header>
+        
     </header>
 
     <section class="area-slider">
@@ -43,6 +46,9 @@
                     <li class="chef-item">
                        <a href="https://www.alexatala.com.br/" target="_blank" rel="noopener noreferrer"><img src="./chefes/chef Alex-atalaia.jpg" alt="Chef Alex Atalaia" /></a>
                         <p><strong>Chef Alex Atalaia</strong></p>
+                        <p class="chef-descricao">
+                              Um dos nomes mais respeitados da gastronomia mundial, Alex Atala revolucionou a cozinha brasileira ao elevar os ingredientes da **Amazônia** e do Cerrado ao patamar da alta gastronomia internacional. Sua história é marcada pela defesa da biodiversidade e pela pesquisa de sabores nativos.
+                        </p>    
                     </li>
                     <li class="chef-item">
                        <a href="https://henriquefogaca.com.br/" target="_blank" rel="noopener noreferrer"><img src="./chefes/henrique-fogaca.jpg" alt="Henrique Fogaça" /></a>
@@ -56,7 +62,18 @@
             </div>
             <button id="btn-chef-proximo">➡️</button>
         </div>
-
+        
+<section class="quem-somos">
+    <div class="container-quem-somos">
+        <h2>Quem Somos: Chefs do Brasil</h2>
+        <p>
+            O "Chefs do Brasil" nasceu com a missão de **celebrar a rica e diversa gastronomia brasileira**. Nosso objetivo é **democratizar a alta culinária**, mostrando que pratos de qualidade, inspirados em grandes chefs, podem ser reproduzidos por qualquer pessoa na cozinha de casa. Acreditamos no poder da comida em conectar pessoas, tradições e culturas.
+        </p>
+        <p>
+            Navegue pelos nossos pratos típicos, descubra as receitas de chefs renomados e compartilhe seu próprio talento culinário no nosso mural interativo.
+        </p>
+    </div>
+</section>
 
     </section>
 
@@ -207,11 +224,57 @@
         </div>
 
     </section>
+<footer>
+    <div class="container-rodape">
+        
+        <div class="rodape-contato">
+            <h4>Contato e Localização</h4>
+            <p>E-mail: contato@seusite.com</p>
+            <p>Telefone: (00) 1234-5678</p>
+            <p>📍 Local: Rua dos Sabores, 123 - Centro Culinário, SP</p>
+            
+            <div class="mapa-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.485125345718!2d-46.6578018849495!3d-23.550519984683075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c869922a9f%3A0x6b4c1d6b0a6b4a5!2sRua%20Oscar%20Freire%2C%20188!5e0!3m2!1spt-BR!2sbr!4v1633000000000!5m2!1spt-BR!2sbr" 
+                    width="100%" 
+                    height="200" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+            
+        </div>
 
-    <footer>
-    </footer>
+        <div class="rodape-redes">
+            <h4>Siga-nos</h4>
+            <div class="icones-redes">
+                <a href="#" target="_blank" title="Instagram Chefs do Brasil">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                
+                <a href="#" onclick="return false;" title="WhatsApp de Contato">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+                <a href="#" target="_blank" title="Facebook Chefs do Brasil">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                
+                </div>
+        </div>
+    </div>
+    
+    <div class="direitos-reservados">
+        <p>&copy; 2025 Chefs do Brasil | Todos os direitos reservados.</p>
+    </div>
+</footer>
 
     <script src="./script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init(); // Inicializa a biblioteca
+</script>
 </body>
 
 </html>
