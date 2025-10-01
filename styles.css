@@ -276,18 +276,27 @@ footer {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     min-height: 500px; 
 }
-
+.comidas-lista.grupo-pratos {
+    display: flex; 
+    flex-direction: column; /* <--- ESSENCIAL: Garante o layout vertical */
+    gap: 25px; /* Adiciona espaçamento entre um prato e outro */
+}
 /* CORREÇÃO CHAVE: Define altura e largura fixas para o item e a imagem */
 .comida-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    border-radius: 5px;
-    /* NOVO: Altura fixa para todos os itens da lista, evitando flutuação */
-    min-height: 100px; 
+    width: 100%; /* Garante que o item ocupe a largura total do contêiner pai */
+    display: flex; /* Mantém a imagem e o texto alinhados dentro do próprio prato */
+    align-items: flex-start; /* Alinha a imagem e o texto no topo */
+    padding: 15px;
+    border: 1px solid #e0e0e0; /* Opcional: borda leve para separar os itens */
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.comida-item .img-comida {
+    width: 100px; /* Define um tamanho fixo para a imagem */
+    height: 100px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 4px;
+    margin-right: 15px;
 }
 
 /* CORREÇÃO CHAVE: Imagens com tamanho fixo */

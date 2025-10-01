@@ -42,8 +42,8 @@ const dadosReceitas = {
     caisdavitoria: {
         titulo: "Caís da Vitória (Variação de Peixe Baiano)",
         imagem: "caís-da-vitoria.jpg",
-        ingredientes: "Filé de peixe branco, pimentões, tomate, cebola, azeite de oliva, limão e temperos frescos.",
-        preparo: "Prato levemente cozido. Marine o peixe. Cozinhe em fogo brando com os vegetais. Servir com arroz e pirão."
+        ingredientes: "Pegue os Camarões Rosas limpos e tratados, pimentões, tomate, cebola, azeite de oliva, limão e temperos frescos.",
+        preparo: "Prato levemente cozido. Marine os Camarões Rosas e cozinhe em fogo lento. Refogue os temperos. Cozinhe em fogo brando com os vegetais. Servir com arroz e pirão."
     },
     bobodecamarao: {
         titulo: "Bobó de Camarão Cremoso",
