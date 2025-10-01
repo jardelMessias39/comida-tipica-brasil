@@ -73,7 +73,15 @@ const btnProximoChef = document.getElementById('btn-chef-proximo');
 const chefItems = document.querySelectorAll('.chef-item');
 
 // O valor fixo de deslocamento (200px item + 25px gap)
-const LARGURA_DESLOCAMENTO = 225; 
+let LARGURA_DESLOCAMENTO = 225; // Valor de fallback
+
+if (chefItems.length > 0) {
+    // Pega a largura real de um item de chef + a margem do gap
+    const chefWidth = chefItems[0].offsetWidth; 
+    // O valor do gap (25px) precisa ser somado se o JS não incluir a margem/gap no offsetWidth
+    // Para simplificar, vamos usar o offsetWidth que geralmente inclui padding, mas não o margin/gap.
+    LARGURA_DESLOCAMENTO = chefWidth + 25; 
+}
 const itemsVisiveis = 1; 
 
 let indiceAtual = 0;
