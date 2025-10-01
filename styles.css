@@ -89,15 +89,18 @@ button:hover {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    
 }
-
+.chefs-visor {
+    width: 100%; /* Ocupa o espaço entre os botões */
+    overflow: hidden; /* ESSENCIAL: Recorta o conteúdo da lista */
+}
 .chefs-lista {
     display: flex;
-    overflow-x: hidden; /* Oculta a barra de rolagem nativa */
     list-style: none;
     gap: 25px;
     padding: 10px 0;
+    white-space: nowrap; /* Impede que os itens quebrem linha */
     scroll-behavior: smooth; /* Rolagem suave */
     width: 100%;
 }
@@ -110,8 +113,8 @@ button:hover {
 }
 
 .chef-item img {
-    width: 150px; /* Aumentado o tamanho da imagem */
-    height: 150px; 
+    width: 170px; /* Aumentado o tamanho da imagem */
+    height: 170px; 
     border-radius: 50%;
     object-fit: cover; 
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
@@ -128,8 +131,9 @@ button:hover {
     margin: 0 10px;
     flex-shrink: 0;
 }
-
-/* === 4. LAYOUT PRINCIPAL: PRATOS E RECEITAS (ESPAÇO NA ESQUERDA) === */
+#btn-chef-proximo {
+   margin: 0 10px;
+}
 
 .conteudo-principal-receitas {
     display: flex;

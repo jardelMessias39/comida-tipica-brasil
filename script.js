@@ -1,9 +1,8 @@
 // ====================================================================
 // ESTRUTURA DE DADOS (TODAS AS 8 RECEITAS)
 // ====================================================================
-
+// DADOS DAS RECEITAS (DO SEU CÓDIGO)
 const dadosReceitas = {
-    // ... (Seu objeto dadosReceitas permanece aqui, inalterado) ...
     feijoada: {
         titulo: "Receita Completa de Feijoada Clássica",
         imagem: "feijoada.jpg",
@@ -54,23 +53,128 @@ const dadosReceitas = {
     }
 };
 
-/// ... (seu código JavaScript anterior) ...
-
-// Dados Simulados INICIAIS para o Mural de Usuários
-// ATENÇÃO: Se carregar do Local Storage, esses dados serão substituídos.
-// Mantenha-os aqui como fallback ou para a primeira vez que a página é carregada.
+// DADOS SIMULADOS PARA MURAL (DO SEU CÓDIGO)
 let receitasUsuarios = [
-    { nome: "Maria S.", titulo: "Torta de Palmito Deliciosa", descricao: "Uma torta simples, mas que lembra o sabor da infância.", imagem: null }, // Adicionei 'imagem: null'
+    { nome: "Maria S.", titulo: "Torta de Palmito Deliciosa", descricao: "Uma torta simples, mas que lembra o sabor da infância.", imagem: null },
     { nome: "João V.", titulo: "Cuscuz Recheado Nordestino", descricao: "A receita tradicional com um toque de carne de sol desfiada.", imagem: null },
     { nome: "Ana K.", titulo: "Bolinho de Chuva da Vovó", descricao: "O melhor para o café da tarde, frito na hora e coberto com açúcar e canela.", imagem: null },
     { nome: "Pedro A.", titulo: "Vatapá Rápido de Liquidificador", descricao: "Prático e cremoso, sem perder o sabor original da Bahia.", imagem: null },
     { nome: "Clara B.", titulo: "Doce de Leite Caseiro", descricao: "Doce cremoso e irresistível, feito na panela de pressão.", imagem: null }
 ];
 
-// ... (seus blocos de Local Storage e Carrossel de Chefes) ...
+// --- FUNÇÕES DE INTERAÇÃO QUE ESTAVAM FALTANDO (CORRIGINDO OS CLIQUES) ---
 
-// --- 3. Mural de Receitas de Usuários (2 Visíveis + Seta) ---
-// (Lógica de Navegação do Mural permanece, mas precisa ser ajustada para renderizar a imagem)
+// --- 1. FUNCIONALIDADE DO CARROSSEL DE CHEFS (SLIDER) ---
+
+// Seus elementos (garantindo que estão sendo capturados)
+const listaChefs = document.getElementById('chefs-lista');
+const btnAnteriorChef = document.getElementById('btn-chef-anterior');
+const btnProximoChef = document.getElementById('btn-chef-proximo');
+const chefItems = document.querySelectorAll('.chef-item');
+
+// O valor fixo de deslocamento (200px item + 25px gap)
+const LARGURA_DESLOCAMENTO = 225; 
+const itemsVisiveis = 1; 
+
+let indiceAtual = 0;
+
+// Função que aplica o movimento à lista
+function atualizarCarrossel() {
+    if (listaChefs && chefItems.length > 0) {
+        // Cálculo: índice atual * largura do movimento
+        const deslocamento = -indiceAtual * LARGURA_DESLOCAMENTO; 
+        
+        // Aplica a translação horizontal (translateX)
+        listaChefs.style.transform = `translateX(${deslocamento}px)`;
+        listaChefs.style.transition = 'transform 0.4s ease-in-out';
+    } else {
+        console.error("Erro: Elementos do carrossel não encontrados ou lista de chefs vazia.");
+    }
+}
+
+// Event Listeners (Os cliques nos botões)
+if (btnProximoChef && btnAnteriorChef && chefItems.length > 0) {
+    
+    btnProximoChef.addEventListener('click', () => {
+        // Se ainda houver chefs para a direita
+        if (indiceAtual < chefItems.length - itemsVisiveis) {
+            indiceAtual++;
+        } else {
+            // Volta para o primeiro chef
+            indiceAtual = 0; 
+        }
+        atualizarCarrossel();
+    });
+
+    btnAnteriorChef.addEventListener('click', () => {
+        // Se não for o primeiro chef
+        if (indiceAtual > 0) {
+            indiceAtual--;
+        } else {
+            // Vai para o último chef
+            indiceAtual = chefItems.length - itemsVisiveis; 
+        }
+        atualizarCarrossel();
+    });
+} 
+// Fim do Carrossel de Chefs
+
+
+// 2. FUNCIONALIDADE DOS PRATOS (MOSTRAR RECEITA COMPLETA)
+const pratosClicaveis = document.querySelectorAll('.comida-item');
+const receitaDetalheContainer = document.querySelector('.receita-detalhe-container');
+
+if (pratosClicaveis.length > 0 && receitaDetalheContainer) {
+    pratosClicaveis.forEach(prato => {
+        // O clique estava faltando aqui!
+        prato.addEventListener('click', () => {
+            const idReceita = prato.dataset.receitaId; 
+            const receita = dadosReceitas[idReceita];
+
+            if (receita) {
+                // Renderiza o detalhe completo da receita no container lateral
+                receitaDetalheContainer.innerHTML = `
+                    <h2 id="receita-titulo-selecao">${receita.titulo}</h2>
+                    <div class="receita-conteudo">
+                        <p><strong>Ingredientes:</strong> ${receita.ingredientes}</p>
+                        <p><strong>Modo de Preparo:</strong> ${receita.preparo}</p>
+                        <img src="./tipicas/${receita.imagem}" alt="Imagem de ${receita.titulo}" style="max-width: 100%; height: auto; margin-top: 15px;">
+                    </div>
+                `;
+            } else {
+                 receitaDetalheContainer.innerHTML = `<h2 id="receita-titulo-selecao">Receita não encontrada para o ID: ${idReceita}</h2>`;
+            }
+        });
+    });
+}
+
+
+// 3. NAVEGAÇÃO ENTRE GRUPOS DE PRATOS (MOSTRAR MAIS)
+const btnMostrarMais = document.getElementById('btn-mostrar-mais-pratos');
+const grupoPratos1 = document.getElementById('grupo-pratos-1');
+const grupoPratos2 = document.getElementById('grupo-pratos-2');
+
+if (btnMostrarMais && grupoPratos1 && grupoPratos2) {
+    btnMostrarMais.addEventListener('click', () => {
+        if (grupoPratos1.style.display !== 'none') {
+            // Esconde o primeiro grupo e mostra o segundo
+            grupoPratos1.style.display = 'none';
+            // Usa 'flex' para garantir que o layout da lista seja mantido
+            grupoPratos2.style.display = 'flex'; 
+            btnMostrarMais.textContent = 'Pratos Anteriores ⬅️';
+        } else {
+            // Esconde o segundo grupo e mostra o primeiro
+            grupoPratos1.style.display = 'flex';
+            grupoPratos2.style.display = 'none';
+            btnMostrarMais.textContent = 'Próximos Pratos ➡️';
+        }
+    });
+}
+
+
+// --- LÓGICA DO MURAL DE USUÁRIOS (DO SEU CÓDIGO) ---
+
+// Mural de Receitas de Usuários (2 Visíveis + Seta)
 const muralReceitasUsuario = document.getElementById('mural-receitas-usuario');
 const btnAnteriorUsuario = document.getElementById('btn-anterior-usuario');
 const btnProximoUsuario = document.getElementById('btn-proximo-usuario');
@@ -87,9 +191,9 @@ function atualizarMuralUsuario() {
             const item = document.createElement('article');
             item.className = 'receita-usuario-item';
             
-            // Adiciona a imagem se ela existir
             let imagemHTML = '';
             if (receita.imagem) {
+                // A imagem está em Base64, então é usada diretamente como source
                 imagemHTML = `<img src="${receita.imagem}" alt="Foto da ${receita.titulo}" class="receita-usuario-img">`;
             }
 
@@ -103,20 +207,40 @@ function atualizarMuralUsuario() {
         }
     }
 
+    // Navegação do mural de usuários
     btnAnteriorUsuario.style.display = indexInicio > 0 ? 'block' : 'none';
     btnProximoUsuario.style.display = indexInicio + receitasPorPagina < receitasUsuarios.length ? 'block' : 'none';
 }
 
-// ... (seus event listeners para os botões do mural) ...
+// Event listeners para navegação do mural de usuários
+if (btnAnteriorUsuario && btnProximoUsuario) {
+    btnProximoUsuario.addEventListener('click', () => {
+        if (indexInicio + receitasPorPagina < receitasUsuarios.length) {
+            indexInicio += receitasPorPagina;
+            atualizarMuralUsuario();
+        }
+    });
 
+    btnAnteriorUsuario.addEventListener('click', () => {
+        if (indexInicio > 0) {
+            indexInicio -= receitasPorPagina;
+            atualizarMuralUsuario();
+        }
+    });
+}
 
-// --- 4. Funcionalidade de Postagem de Receitas de Usuários (Com Upload de Imagem) ---
-
+// 4. FUNCIONALIDADE DE POSTAGEM DE RECEITAS DE USUÁRIOS
 const formPostagem = document.getElementById('form-postagem');
 const inputNome = document.getElementById('nome-usuario');
 const inputTitulo = document.getElementById('titulo-receita');
 const textareaDescricao = document.getElementById('descricao-receita');
-const inputImagemReceita = document.getElementById('imagem-receita'); // NOVO: Campo de imagem
+const inputImagemReceita = document.getElementById('imagem-receita'); 
+
+// Função para salvar no Local Storage (se necessário)
+function salvarReceitas() {
+    // Você pode adicionar uma função aqui para salvar 'receitasUsuarios' no Local Storage
+    // localStorage.setItem('receitasUsuarios', JSON.stringify(receitasUsuarios));
+}
 
 formPostagem.addEventListener('submit', (e) => {
     e.preventDefault(); 
@@ -136,13 +260,13 @@ formPostagem.addEventListener('submit', (e) => {
     if (arquivoImagem) {
         const reader = new FileReader();
         reader.onload = function(e) {
-            imagemBase64 = e.target.result; // Imagem em Base64
+            imagemBase64 = e.target.result; 
 
             const novaReceita = {
                 nome: novoNome,
                 titulo: novoTitulo,
                 descricao: novaDescricao,
-                imagem: imagemBase64 // Guarda a imagem em Base64
+                imagem: imagemBase64 
             };
 
             receitasUsuarios.unshift(novaReceita);
@@ -153,9 +277,8 @@ formPostagem.addEventListener('submit', (e) => {
             formPostagem.reset();
             alert('Sua receita foi postada com sucesso!');
         };
-        reader.readAsDataURL(arquivoImagem); // Lê o arquivo como URL de dados (Base64)
+        reader.readAsDataURL(arquivoImagem); 
     } else {
-        // Se não houver imagem, posta a receita sem ela
         const novaReceita = {
             nome: novoNome,
             titulo: novoTitulo,
@@ -170,37 +293,35 @@ formPostagem.addEventListener('submit', (e) => {
         formPostagem.reset();
         alert('Sua receita foi postada com sucesso!');
     }
- 
-
-
-    // --- 5. Funcionalidade de Postagem de Comentários ---
-    // (Lógica do Comentário permanece inalterada)
-    const formComentario = document.getElementById('form-comentario');
-    const muralComentarios = document.getElementById('mural-comentarios');
-    const inputNomeComentario = document.getElementById('nome-comentario');
-    const textareaTextoComentario = document.getElementById('texto-comentario');
-
-    formComentario.addEventListener('submit', (e) => {
-        e.preventDefault(); 
-
-        const nome = inputNomeComentario.value.trim();
-        const texto = textareaTextoComentario.value.trim();
-
-        if (!nome || !texto) {
-            alert('Por favor, preencha seu nome e o texto do comentário.');
-            return;
-        }
-
-        const novoComentario = document.createElement('article');
-        novoComentario.className = 'comentario';
-        novoComentario.innerHTML = `<p><strong>${nome}:</strong> ${texto}</p>`;
-
-        muralComentarios.prepend(novoComentario);
-
-        formComentario.reset();
-    });
-
-
-    // Inicializa o mural de receitas de usuários na primeira carga
-    atualizarMuralUsuario();
 });
+
+
+// 5. FUNCIONALIDADE DE POSTAGEM DE COMENTÁRIOS
+const formComentario = document.getElementById('form-comentario');
+const muralComentarios = document.getElementById('mural-comentarios');
+const inputNomeComentario = document.getElementById('nome-comentario');
+const textareaTextoComentario = document.getElementById('texto-comentario');
+
+formComentario.addEventListener('submit', (e) => {
+    e.preventDefault(); 
+
+    const nome = inputNomeComentario.value.trim();
+    const texto = textareaTextoComentario.value.trim();
+
+    if (!nome || !texto) {
+        alert('Por favor, preencha seu nome e o texto do comentário.');
+        return;
+    }
+
+    const novoComentario = document.createElement('article');
+    novoComentario.className = 'comentario';
+    novoComentario.innerHTML = `<p><strong>${nome}:</strong> ${texto}</p>`;
+
+    muralComentarios.prepend(novoComentario);
+
+    formComentario.reset();
+});
+
+
+// Inicializa o mural de receitas de usuários na primeira carga
+atualizarMuralUsuario();
