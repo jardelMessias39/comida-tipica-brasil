@@ -135,7 +135,7 @@ if (btnProximoChef && btnAnteriorChef && chefItems.length > 0) {
         atualizarCarrossel();
     });
 } 
-// Fim do Carrossel de Chefs
+
 // A CHAVE que usaremos no Local Storage
 const CHAVE_RECEITAS = 'receitasUsuariosSalvas';
 
@@ -298,9 +298,7 @@ const textareaDescricao = document.getElementById('descricao-receita');
 const inputImagemReceita = document.getElementById('imagem-receita'); 
 
 // Função para salvar no Local Storage (se necessário)
-function salvarReceitas() {
-  
-}
+
 
 formPostagem.addEventListener('submit', (e) => {
     e.preventDefault(); 
