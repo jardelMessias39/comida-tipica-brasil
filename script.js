@@ -62,43 +62,53 @@ let receitasUsuarios = [
     { nome: "Clara B.", titulo: "Doce de Leite Caseiro", descricao: "Doce cremoso e irresistível, feito na panela de pressão.", imagem: null }
 ];
 
-// --- FUNÇÕES DE INTERAÇÃO QUE ESTAVAM FALTANDO (CORRIGINDO OS CLIQUES) ---
+
 
 // --- 1. FUNCIONALIDADE DO CARROSSEL DE CHEFS (SLIDER) ---
 
-// Seus elementos (garantindo que estão sendo capturados)
 const listaChefs = document.getElementById('chefs-lista');
 const btnAnteriorChef = document.getElementById('btn-chef-anterior');
 const btnProximoChef = document.getElementById('btn-chef-proximo');
 const chefItems = document.querySelectorAll('.chef-item');
 
-// O valor fixo de deslocamento (200px item + 25px gap)
-let LARGURA_DESLOCAMENTO = 225; // Valor de fallback
-
-if (chefItems.length > 0) {
-    // Pega a largura real de um item de chef + a margem do gap
-    const chefWidth = chefItems[0].offsetWidth; 
-    // O valor do gap (25px) precisa ser somado se o JS não incluir a margem/gap no offsetWidth
-    // Para simplificar, vamos usar o offsetWidth que geralmente inclui padding, mas não o margin/gap.
-    LARGURA_DESLOCAMENTO = chefWidth + 25; 
-}
 const itemsVisiveis = 1; 
-
 let indiceAtual = 0;
 
-// Função que aplica o movimento à lista
+// *** MUDANÇA AQUI: CRIANDO UMA FUNÇÃO PARA CALCULAR O DESLOCAMENTO REAL ***
+function calcularLarguraDeslocamento() {
+    if (chefItems.length === 0) return 0;
+
+    // Pega o primeiro item como referência
+    const primeiroChef = chefItems[0];
+    
+    // getBoundingClientRect().width retorna a largura do item na tela (Ex: 200px no PC, ou 90% da tela no celular)
+    const larguraItem = primeiroChef.getBoundingClientRect().width;
+    
+    // O gap é de 25px (precisamos somá-lo ao deslocamento)
+    const GAP_FIXO = 25; 
+    
+    // Retorna a largura do chef + o espaço (gap)
+    return larguraItem + GAP_FIXO; 
+}
+
+
+// Função que aplica o movimento à lista (agora usando o cálculo dinâmico)
 function atualizarCarrossel() {
     if (listaChefs && chefItems.length > 0) {
-        // Cálculo: índice atual * largura do movimento
-        const deslocamento = -indiceAtual * LARGURA_DESLOCAMENTO; 
+        // CHAMA A FUNÇÃO PARA SABER QUANTO PRECISA MOVER
+        const LARGURA_DESLOCAMENTO_REAL = calcularLarguraDeslocamento();
         
-        // Aplica a translação horizontal (translateX)
+        // Cálculo: índice atual * largura de movimento
+        const deslocamento = -indiceAtual * LARGURA_DESLOCAMENTO_REAL; 
+        
         listaChefs.style.transform = `translateX(${deslocamento}px)`;
         listaChefs.style.transition = 'transform 0.4s ease-in-out';
     } else {
         console.error("Erro: Elementos do carrossel não encontrados ou lista de chefs vazia.");
     }
 }
+
+
 
 // Event Listeners (Os cliques nos botões)
 if (btnProximoChef && btnAnteriorChef && chefItems.length > 0) {
