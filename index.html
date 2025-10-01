@@ -1,56 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comidas Típicas do Brasil</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
     <header>
-        </header>
+    </header>
 
     <section class="area-slider">
         <p><strong>Conheça algumas das comidas típicas do Brasil, preparadas por chefs renomados.</strong></p>
 
         <div class="chefs-carrossel-container">
-            <button class="btn-carrossel" id="btn-chef-anterior">⬅️</button>
-            <ul class="slider chefs-lista" id="chefs-lista">
-                <li class="chef-item">
-                    <img src="./chefes/chef Roberto-neves.jpg" alt="Chef Roberto Neves" />
-                    <p><strong>Chef Roberto Neves</strong></p>
-                </li>
-                <li class="chef-item">
-                    <img src="./chefes/Serginho-jucá.jpg" alt="Chef Serginho Jucá" />
-                    <p><strong>Chef Serginho Jucá</strong></p>
-                </li>
-                <li class="chef-item">
-                    <img src="./chefes/rafael-liberio.webp" alt="Chef Rafael Liberio" />
-                    <p><strong>Chef Rafael Liberio</strong></p>
-                </li>
-                <li class="chef-item">
-                    <img src="./chefes/chef thiago rosseti.jpg" alt="Thiago Rosseti Tessor" />
-                    <p><strong>Chef Thiago Rosseti</strong></p>
-                </li>
-                <li class="chef-item">
-                    <img src="./chefes/chef Alex-atalaia.jpg" alt="Chef Alex Atalaia" />
-                    <p><strong>Chef Alex Atalaia</strong></p>
-                </li>
-                <li class="chef-item">
-                    <img src="./chefes/henrique-fogaca-jamile.jpg" alt="Henrique Fogaça e Jamile" />
-                    <p><strong>Chef Henrique Fogaça</strong></p>
-                </li>
-                <li class="chef-item">
-                    <img src="./chefes/chef thays.webp" alt="Chef Thays" />
-                    <p><strong>Chef Thays</strong></p>
-                </li>
-            </ul>
-            <button class="btn-carrossel" id="btn-chef-proximo">➡️</button>
+            <button id="btn-chef-anterior">⬅️</button>
+            <div class="chefs-visor">
+                <ul class="slider chefs-lista" id="chefs-lista">
+                    <li class="chef-item">
+                        <img src="./chefes/chef Roberto-neves.jpg" alt="Chef Roberto Neves" />
+                        <p><strong>Chef Roberto Neves</strong></p>
+                    </li>
+                    <li class="chef-item">
+                        <img src="./chefes/Serginho-jucá.jpg" alt="Chef Serginho Jucá" />
+                        <p><strong>Chef Serginho Jucá</strong></p>
+                    </li>
+                    <li class="chef-item">
+                        <img src="./chefes/Rafael-Liberio.webp" alt="Chef Rafael Liberio" />
+                        <p><strong>Chef Rafael Liberio</strong></p>
+                    </li>
+                    <li class="chef-item">
+                        <img src="./chefes/chef thiago rosseti.jpg" alt="Thiago Rosseti Tessor" />
+                        <p><strong>Chef Thiago Rosseti</strong></p>
+                    </li>
+                    <li class="chef-item">
+                        <img src="./chefes/chef Alex-atalaia.jpg" alt="Chef Alex Atalaia" />
+                        <p><strong>Chef Alex Atalaia</strong></p>
+                    </li>
+                    <li class="chef-item">
+                        <img src="./chefes/henrique-fogaca.jpg" alt="Henrique Fogaça" /></a>
+                        <p><strong>Chef Henrique Fogaça</strong></p>
+                    </li>
+                    <li class="chef-item">
+                        <img src="./chefes/chef thays.webp" alt="Chef Thays" />
+                        <p><strong>Chef Thays</strong></p>
+                    </li>
+                </ul>
+
+                
+
+            </div>
+            <button id="btn-chef-proximo">➡️</button>
         </div>
+
+
     </section>
 
     <div class="logo logo-destaque">Típicas Gastronomia</div>
@@ -64,44 +74,68 @@
             <div class="comidas-lista grupo-pratos" id="grupo-pratos-1">
                 <article class="comida-item" data-receita-id="feijoada">
                     <img src="./tipicas/feijoada.jpg" alt="Feijoada" class="img-comida">
-                    <div><h3>Feijoada</h3><p>Prato à base de feijão preto e carnes variadas...</p></div>
+                    <div>
+                        <h3>Feijoada</h3>
+                        <p>Prato à base de feijão preto e carnes variadas...</p>
+                    </div>
                 </article>
 
                 <article class="comida-item" data-receita-id="moqueca">
                     <img src="./tipicas/moqueca.jpg" alt="Moqueca" class="img-comida">
-                    <div><h3>Moqueca</h3><p>Prato à base de peixe cozido com leite de coco...</p></div>
+                    <div>
+                        <h3>Moqueca</h3>
+                        <p>Prato à base de peixe cozido com leite de coco...</p>
+                    </div>
                 </article>
 
                 <article class="comida-item" data-receita-id="churrasco">
                     <img src="./tipicas/churrasco.jpg" alt="Churrasco" class="img-comida">
-                    <div><h3>Churrasco</h3><p>Prato à base de carne grelhada...</p></div>
+                    <div>
+                        <h3>Churrasco</h3>
+                        <p>Prato à base de carne grelhada...</p>
+                    </div>
                 </article>
 
                 <article class="comida-item" data-receita-id="paodequeijo">
                     <img src="./tipicas/paodequeijo.jpg" alt="Pão de Queijo" class="img-comida">
-                    <div><h3>Pão de Queijo</h3><p>Bolinho de queijo feito com polvilho...</p></div>
+                    <div>
+                        <h3>Pão de Queijo</h3>
+                        <p>Bolinho de queijo feito com polvilho...</p>
+                    </div>
                 </article>
             </div>
 
             <div class="comidas-lista grupo-pratos" id="grupo-pratos-2" style="display: none;">
                 <article class="comida-item" data-receita-id="acaraje">
                     <img src="./tipicas/acaraje.jpg" alt="Acarajé" class="img-comida">
-                    <div><h3>Acarajé</h3><p>Bolinho de feijão-fradinho frito, típico da Bahia.</p></div>
+                    <div>
+                        <h3>Acarajé</h3>
+                        <p>Bolinho de feijão-fradinho frito, típico da Bahia.</p>
+                    </div>
                 </article>
 
                 <article class="comida-item" data-receita-id="carnedepanela">
                     <img src="./tipicas/serginhojuca-carnedepanela.webp" alt="Carne de Panela" class="img-comida">
-                    <div><h3>Carne de Panela</h3><p>Carne cozida lentamente com temperos...</p></div>
+                    <div>
+                        <h3>Carne de Panela</h3>
+                        <p>Carne cozida lentamente com temperos...</p>
+                    </div>
                 </article>
 
                 <article class="comida-item" data-receita-id="caisdavitoria">
                     <img src="./tipicas/caís-da-vitoria.jpg" alt="Caís da Vitória" class="img-comida">
-                    <div><h3>Caís da Vitória</h3><p>Prato à base de peixe, típico da Bahia.</p></div>
+                    <div>
+                        <h3>Caís da Vitória</h3>
+                        <p>Prato à base de peixe, típico da Bahia.</p>
+                    </div>
                 </article>
 
                 <article class="comida-item" data-receita-id="bobodecamarao">
                     <img src="./tipicas/bobó-de-camarão.jpeg" alt="Bobó de Camarão" class="img-comida">
-                    <div><h3>Bobó de Camarão</h3><p>Prato à base de camarão e mandioca...</p></div>
+                    <div>
+                        <h3>Bobó de Camarão</h3>
+                        <p>Prato à base de camarão e mandioca...</p>
+                    </div>
                 </article>
             </div>
 
@@ -112,7 +146,7 @@
 
         <div class="receita-detalhe-container">
             <h2 id="receita-titulo-selecao">Clique em um prato para ver a receita!</h2>
-            </div>
+        </div>
 
     </section>
 
@@ -133,7 +167,7 @@
                     <textarea id="descricao-receita" rows="5" required></textarea>
 
                     <div class="botoes-postagem">
-                       <input type="file" id="imagem-receita" name="imagem-receita-upload" accept="image/*">
+                        <input type="file" id="imagem-receita" name="imagem-receita-upload" accept="image/*">
                         <button type="submit" id="btn-postar-receita">Postar Receita</button>
                     </div>
                 </form>
@@ -155,29 +189,30 @@
             <h3>O que os outros dizem:</h3>
             <div id="mural-comentarios">
                 <article class="comentario">
-                    <p><strong>Chef Visitante:</strong> Amei a proposta! O design ficou incrível, parabéns pela iniciativa. Vou postar minha receita de Mousse de Maracujá.</p>
+                    <p><strong>Chef Visitante:</strong> Amei a proposta! O design ficou incrível, parabéns pela
+                        iniciativa. Vou postar minha receita de Mousse de Maracujá.</p>
                 </article>
                 <article class="comentario">
                     <p><strong>Visitante 2:</strong> A moqueca baiana é minha favorita. Excelente site!</p>
                 </article>
             </div>
         </div>
-        
+
         <div class="coluna-interativa-direita">
             <h3>Receitas dos Usuários</h3>
             <div id="mural-receitas-usuario" class="mural-receitas-usuario">
-                </div>
+            </div>
 
             <div class="navegacao-usuario">
                 <button id="btn-anterior-usuario" style="display: none;">⬅️</button>
                 <button id="btn-proximo-usuario">➡️</button>
             </div>
         </div>
-        
+
     </section>
 
     <footer>
-        </footer>
+    </footer>
 
     <script src="./script.js"></script>
 </body>
