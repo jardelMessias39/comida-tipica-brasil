@@ -196,19 +196,21 @@ button:hover {
     flex-shrink: 0; 
 }
 
-/* Seção Interativa */
+
+
 .area-interativa {
     display: flex;
+    justify-content: space-between;
+    gap: 40px; /* Garante um bom espaço entre as colunas */
+    padding: 40px 20px;
     max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    gap: 40px;
+    margin: 0 auto;
 }
 
-/* Coluna Direita (Mural do Usuário) */
+ 
 .coluna-interativa-direita {
-    flex: 1; /* Ocupa a metade da direita */
-    min-width: 300px;
+    flex: 1; /* Permite que ocupe a metade disponível */
+    min-width: 300px; /* Evita que ela encolha demais em telas menores */
 }
 
 /* Mural onde as receitas são injetadas (Contêiner flexível) */
@@ -218,14 +220,32 @@ button:hover {
     gap: 15px; /* Espaço entre as receitas */
 }
 
-/* O item de receita individual (Receitas postadas pelos usuários) */
+/* O CONTAINER DE CADA RECEITA POSTADA */
 .receita-usuario-item {
-    padding: 15px;
-    background-color: #ffffff;
     border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* O AJUSTE ESSENCIAL PARA AS IMAGENS */
+.receita-usuario-item img {
+    /* Garante que a imagem nunca ultrapasse a largura do seu container pai */
+    max-width: 100%; 
+    
+    /* Garante que a altura se ajuste para manter a proporção original */
+    height: auto; 
+    
+    /* Define uma altura máxima se necessário, mas 'max-width: 100%' é o mais importante */
+    max-height: 250px; 
+    
+    /* Garante que a imagem não fique desproporcional caso ela seja muito grande */
+    object-fit: cover; 
+    width: 100%; /* Faz a imagem ocupar 100% do espaço horizontal disponível */
+    
     border-radius: 6px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-    margin-bottom: 0; /* REMOVIDA A MARGEM GIGANTE */
+    margin-bottom: 10px;
 }
 
 /* Navegação do Mural (Setas) */
